@@ -20,6 +20,7 @@ section{
     background-color: white;
     padding-left: 200px;
     padding-right: 200px;
+    min-height: 600px;
 }
 
 .navbar{
