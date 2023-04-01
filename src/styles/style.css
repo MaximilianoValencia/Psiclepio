@@ -1,0 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #B3DDD3;
+}
+
+header{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+footer{
+    padding-left: 50px;
+    padding-right: 50px;
+    min-height: 150px;
+}
+
+section{
+    display: block;
+    background-color: white;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .btn-primary{
+    width: 120px;
+}
+
+li{
+    margin: 5px;
+}
+
+.btn-primary{
+    background-color: #F56E78 !important;
+    font-weight: bold !important;
+    border: #F56E78 !important;
+}
+
+
+.footerbuttons{
+    display: block;
+    justify-content: end;
+}
+.footerbuttons .btn-primary{
+    width: 100px;
+}
+#contenido{
+    background-color: #B3DDD3 !important;
+    min-height: 400px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+#botonera-contenido{
+    background-color: white;
+    padding: 0;
+    display: flex;
+}
+.cuadrado-botonera-contenido{
+    width: 25%;
+    height: 200px;
+    position: relative;
+}
+
+.cuadrado-botonera-contenido .btn-primary{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+#rounded{
+     border-bottom-right-radius: 200px
+}
+
+.logo-contenido{
+    display:block;
+    width:350px;
+    height: 350px;
+    border-radius: 350px;
+    text-align:center;
+    margin: 20px;
+    background: #fff;
+}
+.texto-contenido{
+    padding-top: 50px;
+    padding-left: 100px;
+    vertical-align: top;
+    font-size:xx-large ;
+    font-weight: bold;
+    inline-size: 1000px;
+    overflow-wrap: break-word;
+}
+.texto-contenido p{
+    font-size: medium;
+    font-weight: 100;
+}
+
+.menu-usuario{
+    height: 50px;
+    width: 50px;
+    background-color: #F56E78;
+    border-radius: 50px;
+    margin-top: -10px;
+}
