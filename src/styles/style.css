@@ -3,18 +3,15 @@
     padding: 0px;
     background-color: #B3DDD3;
 }
-
 header{
     padding-left: 50px;
     padding-right: 50px;
 }
-
 footer{
     padding-left: 50px;
     padding-right: 50px;
     min-height: 150px;
 }
-
 section{
     display: block;
     background-color: white;
@@ -22,26 +19,23 @@ section{
     padding-right: 200px;
     min-height: 600px;
 }
-
 .navbar{
     display: flex;
     justify-content: space-between;
+    flex-flow: row wrap;
 }
 .navbar .btn-primary{
     width: 120px;
+    flex-flow: row wrap;
 }
-
 li{
     margin: 5px;
 }
-
 .btn-primary{
     background-color: #F56E78 !important;
     font-weight: bold !important;
     border: #F56E78 !important;
 }
-
-
 .footerbuttons{
     display: block;
     justify-content: end;
@@ -67,7 +61,6 @@ li{
     height: 200px;
     position: relative;
 }
-
 .cuadrado-botonera-contenido .btn-primary{
     position: absolute; 
     top: 50%; 
@@ -75,11 +68,9 @@ li{
     transform: translate(-50%, -50%);
     width: 200px;
 }
-
 #rounded{
      border-bottom-right-radius: 200px
 }
-
 .logo-contenido{
     display:block;
     width:350px;
@@ -102,11 +93,35 @@ li{
     font-size: medium;
     font-weight: 100;
 }
-
 .menu-usuario{
     height: 50px;
     width: 50px;
     background-color: #F56E78;
     border-radius: 50px;
     margin-top: -10px;
+}
+.container-fluid.titulo{
+    background-color: white;
+    display: flex;
+    padding: 0;
+}
+.texto-titulo{
+    position: relative;
+    height: 80px;
+    width: 300px;
+    background-color: #F56E78;
+    text-align: center;
+}
+.texto-titulo p{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: #F56E78;
+    color: white;
+    font-weight: bolder;
+}
+.pad-titulo{
+    border-bottom-right-radius: 80px ;
+    width: 100%;
 }

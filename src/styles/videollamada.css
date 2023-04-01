@@ -1,30 +1,4 @@
-.container-fluid.main{
-    background-color: white;
-    display: flex;
-    padding: 0;
-}
 
-.sesion-online{
-    position: relative;
-    height: 80px;
-    width: 300px;
-    background-color: #F56E78;
-    text-align: center;
-}
-
-.sesion-online p{
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    background-color: #F56E78;
-    color: white;
-    font-weight: bolder;
-}
-.pad-sesion{
-    border-bottom-right-radius: 80px ;
-    width: 100%;
-}
 
 .container-fluid.videollamada{
     z-index: 0;
