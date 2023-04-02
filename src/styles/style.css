@@ -120,8 +120,31 @@ li{
     background-color: #F56E78;
     color: white;
     font-weight: bolder;
+    font-size: 20px;
 }
 .pad-titulo{
     border-bottom-right-radius: 80px ;
     width: 100%;
+}
+
+.profesionales{
+    background-color: white;
+}
+
+.col-filtrado{
+    background-color: white;
+}
+.container-filtrado{
+    border-bottom-right-radius: 150px;
+    padding-left: 40px;
+    display:block;
+}
+
+.dropdown.show{
+    width: fit-content;
+}
+.container-filtrado Button{
+    position: relative;
+    bottom: 50px;
+    width: 150px;
 }

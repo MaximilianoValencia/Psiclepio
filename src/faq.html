@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Como funciona</title>
+    <link rel="stylesheet" href="styles/faq.css">
+    <title>FAQ</title>
 </head>
 <body>
     <header>
@@ -33,14 +34,55 @@
     <br><br>
 
     <section>
-<!-- TO DO 
-    
-    
-    
-    
-    
-    
-    -->
+        <div class="container-fluid titulo">
+            <div class="texto-titulo"><p>Preguntas Frecuentes</p></div>
+            <div class="pad-titulo"></div>
+        </div>
+        <br><br>
+        <div class="container-fluid lista-faq">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Pregunta Frecuente 1
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show">
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: white;"><br/></div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Pregunta Frecuente 2
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse">
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: white;"><br/></div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Pregunta Frecuente 3
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse"> 
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </section>
 
     <br><br>

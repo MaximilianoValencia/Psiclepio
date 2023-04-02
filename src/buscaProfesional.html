@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Como funciona</title>
+    <link rel="stylesheet" href="styles/buscarprofesional.css">
+    <title>Psiclepio</title>
 </head>
 <body>
     <header>
@@ -20,27 +21,63 @@
                     </a>
                     <ul class="d-flex flex-row ">
                         <li ><Button type="button" class="btn btn-primary">Inicio</Button></li>
-                        <li ><Button type="button" class="btn btn-primary">Profesionales</li>
-                        <li ><Button type="button" class="btn btn-primary">Sesiones</li>
-                        <li ><Button type="button" class="btn btn-primary">Agenda</li>
-                        <li ><Button type="button" class="btn btn-primary">FAQ</li>
+                        <li ><Button type="button" class="btn btn-primary">Profesionales</Button></li>
+                        <li ><Button type="button" class="btn btn-primary">Sesiones</Button></li>
+                        <li ><Button type="button" class="btn btn-primary">Agenda</Button></li>
+                        <li ><Button type="button" class="btn btn-primary">FAQ</Button></li>
                         <li><div class="menu-usuario"></div></li>
                     </ul>
 
             </div>
         </nav>
     </header>
-    <br><br>
+    <br>
 
     <section>
-<!-- TO DO 
+        <div class="container-fluid titulo">
+            <div class="texto-titulo"><p>Profesionales</p></div>
+            <div class="pad-titulo"></div>
+        </div>
+        <br>
+        <div class="container-fluid buscador">
+            <div class="container-fluid botonera-buscador">
+                <div class="boton-online"><p>Terapia Online</p></div>
+                <div class="boton-presencial"><p>Terapia Presencial</p></div>
+            </div>
+            <div class="container-fluid buscador-main">
+                <h1 style="font-size: 25px; font-weight: bold; margin-top: 5px; min-width: 300px;">¿Ya tienes Psicologo?</h1>
+                <div class="input-group input-group-lg buscador-barra">
+                    <input type="text" class="form-control" placeholder="Ingrese nombre profesional">
+                </div>
+                <div class="container-fluid buscador-menus">
+                    <ul>
+                        <li><div class="btn-group">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle boton-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Todas las Ciudades
+                            </button>
+                            <div class="dropdown-menu">
+                              ...
+                            </div>
+                          </div></li>
+                        <br><br><br>
+                        <li>
+                            <div class="btn-group">
+                              <button class="btn btn-secondary btn-lg dropdown-toggle boton-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Motivos de consulta
+                              </button>
+                              <div class="dropdown-menu">
+                                ...
+                              </div>
+                            </div></li>
+                    </ul>
     
     
-    
-    
-    
-    
-    -->
+                </div>
+
+            </div>
+            <button class="btn btn-primary boton-buscar"> Buscar</button> 
+
+        </div>
     </section>
 
     <br><br>
