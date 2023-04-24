@@ -148,3 +148,9 @@ li{
     bottom: 50px;
     width: 150px;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
