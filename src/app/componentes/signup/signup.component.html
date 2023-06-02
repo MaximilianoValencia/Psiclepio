@@ -1,0 +1,73 @@
+<section>
+    <div class="container-fluid titulo">
+      <div class="texto-titulo"><p>Registrar cuenta</p></div>
+      <div class="pad-titulo"></div>
+  </div>
+  <br>
+    <div class="container">
+      <br>
+      <div class="row justify-content-center" >
+          <div class="col-md-6">
+            <form (ngSubmit)="submitForm()" #signupForm="ngForm">
+              <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-control" 
+                placeholder="Ingrese su nombre completo" 
+                [(ngModel)]="formData.name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <input 
+                type="email" 
+                id="email" 
+                name="email"  
+                class="form-control" 
+                placeholder="Ingrese un correo electronico valido" 
+                [(ngModel)]="formData.email" required email>
+                <div *ngIf="signupForm.controls.email?.invalid && signupForm.controls.email.touched" class="error">
+                  Correo Electronico no válido
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input 
+                type="password" 
+                id="password" 
+                name="password"  
+                placeholder="Ingrese su contraseña" 
+                class="form-control" 
+                [(ngModel)]="formData.password" 
+                required
+                >
+              </div>
+            
+              <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña</label>
+                <input 
+                type="password" 
+                id="confirmPassword" 
+                name="confirmPassword" 
+                class="form-control" 
+                placeholder="Confirme su contraseña" 
+                [(ngModel)]="formData.confirmPassword" 
+                required
+                >
+                <div *ngIf="formData.password !== formData.confirmPassword && signupForm.controls.confirmPassword.touched" class="error">
+                  Las contraseñas no coindiden
+                </div>
+              </div>
+            
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="signupForm.invalid">Crear cuenta</button>
+                <br>
+                <br>
+            </form>
+          </div>
+        </div>
+      </div>
+
+</section>

@@ -1,0 +1,16 @@
+
+<section>
+    <div class="container-fluid titulo">
+        <div class="texto-titulo"><p>Preguntas Frecuentes</p></div>
+        <div class="pad-titulo"></div>
+    </div>
+    <br><br>
+
+    <div *ngFor="let faq of faqData; let i = index" class="faq-item">
+        <div class="question" (click)="toggleAnswer(i)">
+        <div class="question-box">{{ faq.question }}</div>
+        </div>
+        <div class="answer" *ngIf="selectedQuestionIndex === i">{{ faq.answer }}</div>
+    </div>
+
+</section>

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-bienvenida',
+  templateUrl: './bienvenida.component.html',
+  styleUrls: ['./bienvenida.component.scss']
 })
-export class HomeComponent {
+export class BienvenidaComponent {
   constructor(public authService: AuthService) {}
+
 }
+

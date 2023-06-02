@@ -1,0 +1,65 @@
+<section>
+    <div class="container-fluid titulo">
+        <div class="texto-titulo"><p>Inicio de Sesión</p></div>
+        <div class="pad-titulo"></div>
+    </div>
+    <br><br>
+    
+    <div class="container">
+      <br><br>
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <form id="loginForm" (ngSubmit)="submitForm()" #loginForm="ngForm" >
+                  <div class="form-group">
+                    <label for="email">Correo Electronico</label>
+                    <input type="email" class="form-control" id="email" placeholder="Correo Electronico" name="email" [(ngModel)]="formData.email" required>
+                    <span id="correoError" class ="error"></span>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña"  name="password" [(ngModel)]="formData.password" required>
+                    <span id="passError" class ="error"></span>    
+                    </div>
+                    <br>
+                  <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid" >Iniciar Sesión</button>
+                </form>
+              </div>
+            </div>
+        <br><br>
+    </div>
+    <!-- <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3>Sign In</h3>
+            <div class="formGroup">
+              <input type="text" class="formControl" placeholder="Username" #userName required>
+            </div>
+            <div class="formGroup">
+              <input type="password" class="formControl" placeholder="Password" #userPassword required>
+            </div> -->
+            <!-- Calling SignIn Api from AuthService -->
+            <!-- <div class="formGroup">
+              <input type="button" class="btn btnPrimary" value="Log in" (click)="AuthService.SignIn(userName.value, userPassword.value)">
+            </div>
+            <div class="formGroup">
+              <span class="or"><span class="orInner">Or</span></span>
+            </div> -->
+            <!-- Calling GoogleAuth Api from AuthService -->
+            <!-- <div class="formGroup">
+              <button type="button" class="btn googleBtn" (click)="AuthService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                Log in with Google
+              </button>
+            </div>
+            <div class="forgotPassword">
+              <span routerLink="/forgot-password">Forgot Password?</span>
+            </div>
+          </div>
+          <div class="redirectToLogin">
+            <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+          </div>
+        </div>
+      </div>
+       -->
+</section>
