@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
-
+import { User } from 'src/app/servicios/user';
 
 
 @Component({
@@ -27,9 +27,12 @@ export class LoginComponent {
 
   ngOnInit(){}
   
-  url:string= 'http://localhost:8080/loginUser'
+  urlogin:string='http://localhost:8080/loginUser';
+  
   submitForm() {
     this.AuthService.SignIn(this.formData.email,this.formData.password);
-    this.http.post(this.url,this.formData).subscribe(resdata =>{ console.log("respuesta del server :D!")} )
+    this.http.post(this.urlogin,this.formData).subscribe((resdata) =>{
+       console.log("respuesta del server :D!" + JSON.stringify(resdata));
+      })
   }
 }
