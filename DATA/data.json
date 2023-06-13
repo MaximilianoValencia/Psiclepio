@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "user": {
+        "uuid": "1",
+        "displayName": "a",
+        "photoURL": "DATA/foto1.jpg",
+        "emailVerified" : "false",
+        "isPaciente": "false",
+        "isProfesional": "false"
+      }
+    },
+    {
+      "user": {
+        "uuid": "2",
+        "name": "b"
+      }
+    },
+    {
+      "user": {
+        "uuid": "3",
+        "name": "c"
+      }
+    }
+  ]
+}
