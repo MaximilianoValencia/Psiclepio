@@ -3,7 +3,7 @@ const cors = require('cors');
 const fs = require('fs');
 const app=express();
 const PORT = 8080;
-const filePath = "data.json"
+const filePath = "DATA/data.json"
 // const mysql = require('mysql');
 //const bodyParser = require('body-parser');
 app.use(cors())
@@ -15,6 +15,14 @@ app.listen(PORT,()=>{
   console.log("inicio");
   data = loadData(filePath);
 })
+
+
+//Manejar reinicio por nodemon
+let process = require('process');
+process.once('SIGINT', function () {
+  console.log('SIGINT received');
+  guardarDatos();
+});
 
 function loadData(filePath){
   console.log("cargando datos");
