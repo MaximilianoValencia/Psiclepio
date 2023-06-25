@@ -7,5 +7,6 @@ export const environment = {
     apiKey: 'AIzaSyADJ6QP88woMPT6GGqV1Hlh2Ozl4tHwr7Y',
     authDomain: 'psiclepio.firebaseapp.com',
     messagingSenderId: '149335011012',
-  }
+  },
+  recaptchaSiteKey: '6LfkScsmAAAAAJxDe37VxLJtfAbmR62baWuueq9F'
   };

@@ -9,7 +9,7 @@
                 <div *ngIf="(authService.isLoggedIn); then thenBlock else elseBlock"></div>
                 <ng-template #thenBlock>
                     <ul class="d-flex flex-wrap align-items-center">
-                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Inicio'">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary " [routerLink]="'Inicio'">Inicio</a></li>
                       <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Perfil'">Perfil</a></li>
                       <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Sesiones'">Sesiones</a></li>
                       <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Agenda'">Agenda</a></li>

@@ -50,6 +50,10 @@ export class PerfilComponent {
     console.log("Inputs saved!");
   }
 
+  subirFoto(){
+    alert("TO DO")
+  }
+
 }
 
 
