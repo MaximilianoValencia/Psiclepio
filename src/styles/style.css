@@ -3,10 +3,7 @@
     padding: 0px;
     background-color: #B3DDD3;
 }
-header{
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
 footer{
     padding-left: 50px;
     padding-right: 50px;
@@ -19,18 +16,7 @@ section{
     padding-right: 200px;
     min-height: 600px;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-}
-.navbar .btn-primary{
-    width: 120px;
-    flex-flow: row wrap;
-}
-li{
-    margin: 5px;
-}
+
 .btn-primary{
     background-color: #F56E78 !important;
     font-weight: bold !important;
@@ -92,13 +78,6 @@ li{
 .texto-contenido p{
     font-size: medium;
     font-weight: 100;
-}
-.menu-usuario{
-    height: 50px;
-    width: 50px;
-    background-color: #F56E78;
-    border-radius: 50px;
-    margin-top: -10px;
 }
 .container-fluid.titulo{
     background-color: white;

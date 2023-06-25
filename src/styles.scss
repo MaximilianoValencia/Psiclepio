@@ -91,46 +91,37 @@ table {
     padding: 0px;
     background-color: #B3DDD3;
 }
-header{
-    padding-left: 50px;
-    padding-right: 50px;
-}
-footer{
-    padding-left: 50px;
-    padding-right: 50px;
-    min-height: 150px;
-}
+// header{
+//     padding-left: 50px;
+//     padding-right: 50px;
+// }
+
 section{
     display: block;
     background-color: white;
     padding-left: 200px;
     padding-right: 200px;
     min-height: 600px;
+    padding-bottom: 20px;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-}
-.navbar .btn-primary{
-    width: 120px;
-    flex-flow: row wrap;
-}
-li{
-    margin: 5px;
-}
+// .navbar{
+//     display: flex;
+//     justify-content: space-between;
+//     flex-flow: row wrap;
+// }
+// .navbar .btn-primary{
+//     width: 120px;
+//     flex-flow: row wrap;
+// }
+// li{
+//     margin: 5px;
+// }
 .btn-primary{
     background-color: #F56E78 !important;
     font-weight: bold !important;
     border: #F56E78 !important;
 }
-.footerbuttons{
-    display: block;
-    justify-content: end;
-}
-.footerbuttons .btn-primary{
-    width: 100px;
-}
+
 #contenido{
     background-color: #B3DDD3 !important;
     min-height: 400px;
@@ -181,13 +172,7 @@ li{
     font-size: medium;
     font-weight: 100;
 }
-.menu-usuario{
-    height: 50px;
-    width: 50px;
-    background-color: #F56E78;
-    border-radius: 50px;
-    margin-top: -10px;
-}
+
 .container-fluid.titulo{
     background-color: white;
     display: flex;
@@ -255,26 +240,26 @@ li{
     padding: 0px;
 }
 
-.fotoPersona{
-    width: 250px;
-    min-height: 250px;
-    position: relative;
-    left: 0px;
-    background-color: white;
-    padding: 0px;
-}
+// .fotoPersona{
+//     width: 250px;
+//     min-height: 250px;
+//     position: relative;
+//     left: 0px;
+//     background-color: white;
+//     padding: 0px;
+// }
 
-.circulo-foto{
-    width: 200px;
-    height: 200px;
-    border: 5px solid #F56E78;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-}
+// .circulo-foto{
+//     width: 200px;
+//     height: 200px;
+//     border: 5px solid #F56E78;
+//     border-radius: 50%;
+//     background-color: #fff;
+//     position: absolute; 
+//     top: 50%; 
+//     left: 50%; 
+//     transform: translate(-50%, -50%);
+// }
 
 .descripcion-sesion{
     position: relative;
@@ -395,52 +380,52 @@ li{
 .card-body{
     background-color: white;
 }
-#perfil{
-    min-height: 600px;
-    border-bottom-right-radius: 300px;
-    position: relative;
-}
+// #perfil{
+//     min-height: 600px;
+//     border-bottom-right-radius: 300px;
+//     position: relative;
+// }
 
-.foto-perfil{
-    min-width: 400px;
-    min-height: 600px;
-    position: absolute;
-    left: 0px;
-}
+// .foto-perfil{
+//     min-width: 400px;
+//     min-height: 600px;
+//     position: absolute;
+//     left: 0px;
+// }
 
-.texto-perfil{
-    min-width: 850px;
-    min-height: 600px;
-    position: absolute;
-    left: 400px;
-}
+// .texto-perfil{
+//     min-width: 850px;
+//     min-height: 600px;
+//     position: absolute;
+//     left: 400px;
+// }
 
-.circulo-foto{
-    width: 300px;
-    height: 300px;
-    border: 10px solid #F56E78;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute; 
-    top: 30%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-}
+// .circulo-foto{
+//     width: 300px;
+//     height: 300px;
+//     border: 10px solid #F56E78;
+//     border-radius: 50%;
+//     background-color: #fff;
+//     position: absolute; 
+//     top: 30%; 
+//     left: 50%; 
+//     transform: translate(-50%, -50%);
+// }
 
-.texto-perfil h1{
-    font-size: 45px;
-    font-weight: bold;
-}
-.col h3{
-    font-size: 35px;
-}
+// .texto-perfil h1{
+//     font-size: 45px;
+//     font-weight: bold;
+// }
+// .col h3{
+//     font-size: 35px;
+// }
 
-.col p{
-    font-size: 20px;
-}
-.descripcion{
-    position: absolute;
-}
+// .col p{
+//     font-size: 20px;
+// }
+// .descripcion{
+//     position: absolute;
+// }
 
 
 .container-fluid.videollamada{

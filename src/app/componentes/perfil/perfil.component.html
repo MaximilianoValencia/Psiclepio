@@ -38,29 +38,54 @@
       </div> -->
       <div class="container-fluid" id="perfil">
         <div class="foto-perfil">
-            <div class="circulo-foto"></div>
+            <div class="circulo-foto">
+            </div>
+            <button class="btn btn-primary boton-edit-foto ">Subir/cambiar Foto</button>
         </div>
         <div class="texto-perfil">
-            <br> <h1>Información Personal</h1><br>
+            <br><br><h1>Información Personal</h1><br>
             <div class="row">
                 <div class="col">
-                    <h3>Nombre</h3><br>
+                    <!-- <h3>Nombre</h3><br>
                     <h3>Fecha de Nacimiento</h3><br>
                     <h3>Genero</h3><br>
                     <h3>Mail</h3><br>
-                    <h3>Numero</h3><br>
+                    <h3>Numero</h3><br> -->
+                    <div class="field">
+                      <h3>Nombre</h3>
+                      <input [(ngModel)]="nombre" type="text" disabled="true">
+                    </div>
+                    <div class="field">
+                      <h3>Fecha de Nacimiento</h3>
+                      <input [(ngModel)]="fechaNacimiento" type="date" disabled="true">
+                    </div>
+                    <div class="field">
+                      <h3>Género</h3>
+                      <input [(ngModel)]="genero" type="text" disabled="true">
+                    </div>
+                    <div class="field">
+                      <h3>Mail</h3>
+                      <input [(ngModel)]="mail" type="email" disabled="true">
+                    </div>
+                    <div class="field">
+                      <h3>Número</h3>
+                      <input [(ngModel)]="numero" type="tel" disabled="true">
+                    </div>
                 </div>
                 <div class="col">
-                    <p>Nombre de la Persona</p><br><br>
-                    <p>DD/MM/YY</p><br><br>
-                    <p>Genero de la persona</p><br><br>
-                    <p>mail@mail.com</p><br><br>
-                    <p>+569 999 999 99</p><br><br>
+                  <br>
+                  <label>Es Paciente? <input type="checkbox" [(ngModel)]="isPaciente" disabled="true"></label>
+                  <br>
+                  <label>Es Profesional? <input type="checkbox" [(ngModel)]="isProfesional" disabled="true"></label>
+                  <br>
+                  <button class="btn btn-primary ">Editar Perfil</button>
                 </div>
             </div>
+            
+
             <div class="descripcion">
                 <h1>Descripcion</h1><br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet ligula purus, et sodales purus tristique ac. Mauris consectetur arcu in nisi volutpat, volutpat ornare dui pretium. Integer cursus arcu eu urna feugiat, hendrerit semper massa vestibulum. Nam posuere leo ex, in mattis nisl venenatis laoreet. Sed ullamcorper laoreet urna, vel faucibus dui condimentum id. Proin aliquam pharetra mattis. Integer sit amet justo ut purus mattis posuere at eget metus. Nunc sit amet leo quis enim gravida suscipit. Phasellus dictum viverra sapien, sit amet eleifend tortor semper a. In ullamcorper, libero at rhoncus placerat, massa neque cursus tortor, sed tempor nibh quam eu mauris. Phasellus sit amet aliquam diam. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet ligula purus, et sodales purus tristique ac.  </p>
             </div>
         </div>
     </div>      

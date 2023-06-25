@@ -8,25 +8,25 @@
                 </a>
                 <div *ngIf="(authService.isLoggedIn); then thenBlock else elseBlock"></div>
                 <ng-template #thenBlock>
-                    <ul class="d-flex flex-row ">
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Inicio'">Inicio</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Perfil'" >Perfil</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Sesiones'">Sesiones</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Agenda'">Agenda</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" (click)="authService.SignOut()">Salir</Button></li>
-                        <li><div class="menu-usuario"></div></li>
+                    <ul class="d-flex flex-wrap align-items-center">
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Inicio'">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Perfil'">Perfil</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Sesiones'">Sesiones</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Agenda'">Agenda</a></li>
+                      <li class="nav-item"><button type="button" class="btn btn-primary" (click)="authService.SignOut()">Salir</button></li>
+                      <!-- <li class="nav-item"><div class="menu-usuario"></div></li> -->
                     </ul>
-                </ng-template>
-                <ng-template #elseBlock>
-                    <ul class="d-flex flex-row ">
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Inicio'">Inicio</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Profesionales'" >Profesionales</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'Login'">Inicio Sesión</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'SignUp'">Crear cuenta</Button></li>
-                        <li ><Button type="button" class="btn btn-primary" [routerLink]="'FAQ'">FAQ</Button></li>
-                        <li><div class="menu-usuario"></div></li>
+                  </ng-template>
+                  <ng-template #elseBlock>
+                    <ul class="d-flex flex-wrap align-items-center">
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Inicio'">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Profesionales'">Profesionales</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'Login'">Inicio Sesión</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'SignUp'">Crear cuenta</a></li>
+                      <li class="nav-item"><a class="nav-link btn btn-primary" [routerLink]="'FAQ'">FAQ</a></li>
+                      <!-- <li class="nav-item"><div class="menu-usuario"></div></li> -->
                     </ul>
-                </ng-template>
+                  </ng-template>
         </div>
     </nav>
 </header>

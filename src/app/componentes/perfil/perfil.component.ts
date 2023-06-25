@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent {
-  profilePhoto: string ="";
-  name: string ="";
-  dateOfBirth: string ="";
-  gender: string ="";
-  email: string ="";
-  phoneNumber: string="";
-  aboutMe: string="";
+  nombre: string = 'Nombre de la Persona';
+  fechaNacimiento: string = 'DD/MM/YY';
+  genero: string = 'Género de la persona';
+  mail: string = 'mail@mail.com';
+  numero: string = '+569 999 999 99';
+
+  isPaciente: boolean = false;
+  isProfesional: boolean = false;
 }
