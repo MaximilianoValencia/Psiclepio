@@ -78,14 +78,21 @@
                   <br>
                   <label>Es Profesional? <input type="checkbox" [(ngModel)]="isProfesional" disabled="true"></label>
                   <br>
-                  <button class="btn btn-primary ">Editar Perfil</button>
+                  <button class="btn btn-primary" name="botonPerfil" (click)="toggleEditMode()">
+                    {{ isEditMode ? 'Guardar Perfil' : 'Editar Perfil' }}
+                  </button>
                 </div>
             </div>
             
 
             <div class="descripcion">
-                <h1>Descripcion</h1><br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet ligula purus, et sodales purus tristique ac.  </p>
+              <h1>Descripcion</h1><br>
+              <ng-container *ngIf="!isEditMode; else editText">
+                <p>{{ descriptionText }}</p>
+              </ng-container>
+              <ng-template #editText>
+                <textarea [(ngModel)]="descriptionText" rows="5" style="width: 100%; background-color: white;"></textarea>
+              </ng-template>
             </div>
         </div>
     </div>      
