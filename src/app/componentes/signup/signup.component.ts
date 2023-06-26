@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class SignupComponent {
   captcha: string ="" ;
   constructor(
-    private auth: AuthService
+    private auth: AuthService, private http:HttpClient
   ){}
 
   formData = {
@@ -30,9 +30,13 @@ export class SignupComponent {
   submitForm() {
     if (this.formData.password === this.formData.confirmPassword) {
       if(this.captcha){
-        console.log('Form submitted:', this.formData);
+        //console.log('Form submitted:', this.formData);
         this.auth.SignUp(this.formData.email,this.formData.password).then(()=>{
-        
+          setTimeout(() => {
+            this.http.post("http://localhost:8080/crearUsuario",{uid:this.auth.userData.uid , nombre: this.formData.name, email:this.formData.email }).subscribe( (resdata) =>{
+              console.log("usuario creado en bd con respuesta " + (resdata));
+            });
+          }, 1000);
         })
       } else{
         alert("Captcha invalido"); 

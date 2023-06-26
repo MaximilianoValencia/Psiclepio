@@ -1,9 +1,12 @@
 export interface User {
     uid: string;
     email: string;
-    displayName: string;
-    photoURL: string;
+    nombre: string;
+    fotoPerfilUrl: string;
     emailVerified: boolean;
     isPaciente: boolean;
     isProfesional: boolean;
+    fechaNacimiento:Date;
+    genero:string;
+    numero:string;
  }

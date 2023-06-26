@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     BrowserModule, HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
     FormsModule,
     BrowserAnimationsModule, MatTooltipModule, RecaptchaModule
     

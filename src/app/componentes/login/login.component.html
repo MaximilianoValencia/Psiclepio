@@ -1,9 +1,10 @@
 <section>
+  <br>
     <div class="container-fluid titulo">
         <div class="texto-titulo"><p>Inicio de Sesión</p></div>
         <div class="pad-titulo"></div>
     </div>
-    <br><br>
+    <br><br><br>
     
     <div class="container">
       <br><br>
@@ -23,6 +24,7 @@
                     </div>
                     <br>
                     <re-captcha (resolved)="resolved($event)" siteKey="6Ldj2skmAAAAAGmgyYaIHiGK8KUsZFfCHg1TvWIJ"></re-captcha>
+                    <br>
                     <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid" >Iniciar Sesión</button>
                 </form>
               </div>

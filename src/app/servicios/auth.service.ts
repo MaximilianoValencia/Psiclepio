@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { User } from '../servicios/user';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,22 +10,29 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
+
+  baseurl:string = "http://localhost:8080/"
+
   userData: any; // Save logged in user data
   constructor(
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone, // NgZone service to remove outside scope warning
+    private http:HttpClient,
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe((user) => {
       if (user) {
+        //console.log(user)
+        console.log("uid: "+user.uid);
         this.userData = user;
+        //console.log(this.userData)
         localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user')!);
+        //console.log("login: "  + localStorage.getItem('user')!)
       } else {
         localStorage.setItem('user', 'null');
-        JSON.parse(localStorage.getItem('user')!);
+        //console.log("logout:  "+ localStorage.getItem('user')!);
       }
     });
   }
@@ -33,6 +41,9 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
+        // console.log("SignIn")
+        // console.log(result)
+        // console.log(result.user)
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
@@ -109,11 +120,14 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
+      nombre: user.nombre,
+      fotoPerfilUrl: user.fotoPerfilUrl,
       emailVerified: user.emailVerified,
       isPaciente: user.isPaciente,
-      isProfesional: user.isProfesional
+      isProfesional: user.isProfesional,
+      fechaNacimiento: user.fechaNacimiento,
+      genero:user.genero,
+      numero:user.numero,
     };
     return;
   }

@@ -4,7 +4,12 @@
         <div class="pad-titulo"></div>
     </div>
     <br>
-    <div class="container-fluid filtrar-main">
+
+    <div *ngIf="(authService.isLoggedIn); then thenBlock else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <!-- TO DO; VISTA DE UN USUARIO LOGEADO -->
+      <div class="container-fluid filtrar-main">
         <div class="row">
             <div class="col-8 profesionales">
                 <ul>
@@ -46,4 +51,13 @@
             </div>
         </div>
     </div>
+    </ng-template>
+
+    <ng-template #elseBlock>
+      <!-- VISTA SIN USUARIO LOGEADO -->
+      
+
+    </ng-template>
+
+    
 </section>
