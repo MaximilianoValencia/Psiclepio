@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  captcha: string ="" ;
   constructor(
     private auth: AuthService
   ){}
@@ -19,14 +20,25 @@ export class SignupComponent {
     confirmPassword: ''
   };
 
+  
+  resolved(captchaResponse:string){
+    console.log("antes captcha ==" + this.captcha);
+    this.captcha=captchaResponse;
+    console.log("resolved con este respuesta "+ this.captcha)
+  }
+
   submitForm() {
     if (this.formData.password === this.formData.confirmPassword) {
-      console.log('Form submitted:', this.formData);
-      this.auth.SignUp(this.formData.email,this.formData.password).then(()=>{
-
-      })
-    } else {
-      console.log('Passwords do not match');
+      if(this.captcha){
+        console.log('Form submitted:', this.formData);
+        this.auth.SignUp(this.formData.email,this.formData.password).then(()=>{
+        
+        })
+      } else{
+        alert("Captcha invalido"); 
+      }
+    }else {
+        console.log('Passwords do not match');
     }
   }
 }

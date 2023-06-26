@@ -61,7 +61,8 @@
                   Las contraseñas no coindiden
                 </div>
               </div>
-            
+              <re-captcha (resolved)="resolved($event)" siteKey="6Ldj2skmAAAAAGmgyYaIHiGK8KUsZFfCHg1TvWIJ"></re-captcha>
+              <br>
               <button type="submit" class="btn btn-primary btn-block" [disabled]="signupForm.invalid">Crear cuenta</button>
                 <br>
                 <br>

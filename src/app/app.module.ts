@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    BrowserAnimationsModule, MatTooltipModule
+    BrowserAnimationsModule, MatTooltipModule, RecaptchaModule
     
   ],
   providers: [AuthService],
