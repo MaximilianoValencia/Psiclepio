@@ -25,6 +25,7 @@ export class PerfilComponent {
     fotoPerfilUrl: '',
     emailVerified: true,
     uid: '',
+    isDeleted:false
   }
   isEditMode: boolean = false;
   constructor(private authService: AuthService, private http:HttpClient,

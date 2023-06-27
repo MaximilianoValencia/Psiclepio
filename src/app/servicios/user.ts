@@ -10,4 +10,5 @@ export interface User {
     genero:string;
     numero:string;
     descripcion:string;
+    isDeleted:boolean;
  }

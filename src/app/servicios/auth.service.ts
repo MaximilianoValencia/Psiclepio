@@ -128,7 +128,8 @@ export class AuthService {
       fechaNacimiento: "",
       genero:"",
       numero:"",
-      descripcion: ""
+      descripcion: "",
+      isDeleted:false,
     };
     return;
   }
