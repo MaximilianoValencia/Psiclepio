@@ -13,7 +13,7 @@ import { AuthService } from './auth.service';
 export class FotoUploadService {
   private basePath = '/uploads';
 
-  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
+  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage,/*private auth:AuthService*/) { }
 
   pushFileToStorage(fotoUpload: FotoUpload): Observable<number | undefined> {
     const filePath = `${this.basePath}/${fotoUpload.foto.name}`;

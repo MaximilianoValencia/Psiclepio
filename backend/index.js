@@ -68,47 +68,41 @@ app.post('/loginUser',(req,res)=>{
       res.status(404).send('User no encontrado');
     } else {
       console.log(results[0]);
-      res.status(200).json(results[0]);
+      res.status(200)//.json(results[0]);
     }
   });
 });
 
+app.get('/getDatosPerfilUsuario::uid',(req, res) => {
+  console.log("/getDatosPerfilUsuario/:uid")
+  const uid = req.params.uid;
+  console.log("uid : "+uid);
 
-app.get('/getUserPhoto',(req,res)=>{
-    
+  pool.query('SELECT * FROM users WHERE uid = ?', [uid], (error, results) => {
+    if (error) {
+      console.error("error"+error);
+      res.status(500).send('Error query user');
+    } else if (results.length === 0) {
+      console.log("not found"+results);
+      res.status(404).send('User no encontrado');
+    } else {
+      console.log(results[0]);
+      res.status(200).json(results[0]);
+    }
+  });
 })
 
-app.get('/getUserInfo', (req, res) => {
-    const {uuid} = req.body;
-    const user = data.array.find(item => item.user.uuid === uuid);
-    if (!user) {
-      res.status(404).json({ error: 'User not found' });
+app.put('/guardarPerfil',(req,res)=>{
+  console.log("/guardarPerfil");
+  const {uid,email,nombre,fotoPerfilUrl,emailVerified,isPaciente,isProfesional,fechaNacimiento,genero,numero,descripcion} = req.body;
+  const updateUserQuery = `UPDATE users SET email=?, nombre=?, fotoPerfilUrl=?, emailVerified=?, isPaciente=?, isProfesional=?, fechaNacimiento=?, genero=?, numero=?, descripcion=? WHERE uid=?`;
+  const updateValues = [email, nombre, fotoPerfilUrl, emailVerified, isPaciente, isProfesional, fechaNacimiento, genero, numero, descripcion, uid];
+  pool.query(updateUserQuery, updateValues, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Error updating user');
     } else {
-      res.json(user);
+      res.status(200).send();
     }
-  
   });
-  
-
-  // function loadData(filePath){
-//   console.log("cargando datos");
-//   try {
-//     const fileData = fs.readFileSync(filePath, 'utf8');
-//     console.log("datoscargados");
-//     return JSON.parse(fileData);
-//   } catch (err) {
-//     console.error('Error cargando datos', err);
-//     return null;
-//   }
-
-// }
-
-// function writedata(data, filePath) {
-//   fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
-//     if (err) {
-//       console.error('Error escribiendo al archivo:', err);
-//     } else {
-//       console.log('Datos escritos exitosamente:', filePath);
-//     }
-//   });
-// }
+})

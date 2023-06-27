@@ -6,7 +6,8 @@ export interface User {
     emailVerified: boolean;
     isPaciente: boolean;
     isProfesional: boolean;
-    fechaNacimiento:Date;
+    fechaNacimiento:string;
     genero:string;
     numero:string;
+    descripcion:string;
  }

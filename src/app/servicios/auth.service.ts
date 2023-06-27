@@ -121,13 +121,14 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       nombre: user.nombre,
-      fotoPerfilUrl: user.fotoPerfilUrl,
-      emailVerified: user.emailVerified,
-      isPaciente: user.isPaciente,
-      isProfesional: user.isProfesional,
-      fechaNacimiento: user.fechaNacimiento,
-      genero:user.genero,
-      numero:user.numero,
+      fotoPerfilUrl: "",
+      emailVerified: true,
+      isPaciente: false,
+      isProfesional: false,
+      fechaNacimiento: "",
+      genero:"",
+      numero:"",
+      descripcion: ""
     };
     return;
   }
