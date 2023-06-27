@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { FotoUpload } from 'src/app/models/foto-upload.model';
-import { FotoUploadService } from 'src/app/servicios/foto-upload.service';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/servicios/user';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-perfil',
@@ -9,19 +13,36 @@ import { AuthService } from 'src/app/servicios/auth.service';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent {
-  perfilData = {
-    nombre: 'Nombre de la Persona',
-    fechaNacimiento:   'DD/MM/YY',
-    genero:   'Género de la persona',
-    mail:   'mail@mail.com',
-    numero:   '+569 999 999 99',
+  perfilData : User = {
+    nombre: '',
+    fechaNacimiento:   '',
+    genero:   '',
+    email:   '',
+    numero:   '',
     isPaciente:   false,
     isProfesional:  false,
-    descripcion:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet ligula purus, et sodales purus tristique ac.',
-    fotoPerfilUrl: ''
+    descripcion:  '',
+    fotoPerfilUrl: '',
+    emailVerified: true,
+    uid: '',
   }
   isEditMode: boolean = false;
-  constructor(private uploadService: FotoUploadService,private authService: AuthService){};
+  constructor(private authService: AuthService, private http:HttpClient,
+    private db: AngularFireDatabase, private storage: AngularFireStorage){};
+
+  ngOnInit(){
+    setTimeout(() => {
+    console.log("perfil con uid " + (this.authService.userData as User).uid)
+    this.getDatosPerfilUsuario()
+  }, 1000);
+  }
+  getDatosPerfilUsuario(){
+    this.http.get("http://localhost:8080/getDatosPerfilUsuario:"+this.authService.userData.uid).subscribe( (data) =>{
+      const userInfo : User = JSON.parse(JSON.stringify(data));
+      this.perfilData = userInfo;
+      console.log( this.perfilData );
+    })
+  }
 
   //upload
   selectedFiles?: FileList;
@@ -31,14 +52,17 @@ export class PerfilComponent {
   elegirFoto(event: any): void {
     this.selectedFiles = event.target.files;
     //console.log(this.selectedFiles)
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.perfilData.fotoPerfilUrl = reader.result as string;
-    };
-    if(event.target.files[0]){
-      reader.readAsDataURL(event.target.files[0]);
-    }
+    // const reader = new FileReader();
+    // reader.onload = () => {
+    //   this.perfilData.fotoPerfilUrl = reader.result as string;
+    // };
+    // if(event.target.files[0]){
+    //   reader.readAsDataURL(event.target.files[0]);
+    // }
   }
+
+  //subir foto a firebase
+  private basePath = '/uploads';
   upload(): void {
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
@@ -46,7 +70,19 @@ export class PerfilComponent {
       const uid = this.authService.userData.uid
       if (file) {
         this.currentFileUpload = new FotoUpload(file, uid );
-        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe();
+        //this.uploadService.pushFileToStorage().subscribe();
+        const filePath = `${this.basePath}/${this.currentFileUpload.foto.name}`;
+        const storageRef = this.storage.ref(filePath);
+        const uploadTask = this.storage.upload(filePath, this.currentFileUpload.foto);
+        
+        uploadTask.snapshotChanges().pipe(
+          finalize(() => {
+            storageRef.getDownloadURL().subscribe(downloadURL => {
+              //console.log(downloadURL);
+              this.perfilData.fotoPerfilUrl=downloadURL;
+            });
+          })
+        ).subscribe();
       }
     }
   }
@@ -75,11 +111,12 @@ export class PerfilComponent {
       input.style.backgroundColor = '#B3DDD3';
     });
     this.upload() //subir a firebase
-    //POST REQ  API-REST TODO
-
-    //TODO^^^^
-
-    console.log("Perfil guardado!");
+    //console.log(this.perfilData.fotoPerfilUrl)
+    setTimeout(() => {
+      this.http.put("http://localhost:8080/guardarPerfil",this.perfilData).subscribe( (resdata) =>{
+        console.log("Perfil guardado!");
+      })
+    }, 5000);
   }
 }
 
